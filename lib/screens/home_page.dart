@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:news_app_ui_setup/models/category_model.dart';
 import 'package:news_app_ui_setup/widgets/category_list_view.dart';
+import 'package:news_app_ui_setup/widgets/news_list_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -32,7 +34,7 @@ class HomePage extends StatelessWidget {
     ),
     CategoryModel(
       imageAssetUrl: 'assets/technology.jpeg',
-      categoryName: 'Sechnology',
+      categoryName: 'Technology',
     ),
   ];
 
@@ -62,8 +64,39 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: CategoryListView(categoryCard: categoryCard),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16.0),
+          child: Column(
+            children: [
+              CategoryListView(categoryCard: categoryCard),
+              const SizedBox(
+                height: 18,
+              ),
+              const Expanded(
+                child: NewsListView(),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }
 }
+
+
+
+      // body: Column(
+      //   children: [
+      //     CategoryListView(categoryCard: categoryCard),
+      //     SizedBox(
+      //       width: MediaQuery.of(context).size.width,
+      //       height: MediaQuery.of(context).size.height * 0.7,
+      //       child: ListView.builder(
+      //         itemCount: 10,
+      //         itemBuilder: (context, index) {
+      //           return const NewsTile();
+      //         },
+      //       ),
+      //     ),
+      //   ],
+      // ),

@@ -6,7 +6,6 @@ class NewsTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 16),
       alignment: Alignment.bottomCenter,
       decoration: const BoxDecoration(
           borderRadius: BorderRadius.only(

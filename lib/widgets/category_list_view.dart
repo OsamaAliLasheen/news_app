@@ -16,6 +16,7 @@ class CategoryListView extends StatelessWidget {
       height: 140,
       width: MediaQuery.of(context).size.width,
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         scrollDirection: Axis.horizontal,
         itemBuilder: (context, index) {
           return CategoryCard(

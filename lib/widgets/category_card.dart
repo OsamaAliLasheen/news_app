@@ -8,7 +8,6 @@ class CategoryCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(8.0),
       height: 85,
       width: 200,
       decoration: BoxDecoration(
