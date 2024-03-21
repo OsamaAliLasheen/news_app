@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_ui_setup/models/category_model.dart';
-import 'package:news_app_ui_setup/widgets/category_card.dart';
+import 'package:news_app_ui_setup/widgets/category_list_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -62,25 +62,7 @@ class HomePage extends StatelessWidget {
             ),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              SizedBox(
-                height: 140,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return CategoryCard(
-                      category: categoryCard[index],
-                    );
-                  },
-                  itemCount: categoryCard.length,
-                ),
-              ),
-            ],
-          ),
-        ),
+        body: CategoryListView(categoryCard: categoryCard),
       ),
     );
   }
