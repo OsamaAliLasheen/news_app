@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:news_app_ui_setup/models/category_model.dart';
@@ -66,17 +67,32 @@ class HomePage extends StatelessWidget {
         ),
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
-          child: Column(
-            children: [
-              CategoryListView(categoryCard: categoryCard),
-              const SizedBox(
-                height: 18,
+          child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
+            slivers: [
+              SliverToBoxAdapter(
+                  child: CategoryListView(categoryCard: categoryCard)),
+              const SliverToBoxAdapter(
+                child: SizedBox(
+                  height: 18,
+                ),
               ),
-              const Expanded(
+              const SliverToBoxAdapter(
                 child: NewsListView(),
               )
             ],
           ),
+          // child: Column(
+          //   children: [
+          //     CategoryListView(categoryCard: categoryCard),
+          //     const SizedBox(
+          //       height: 18,
+          //     ),
+          //     const Expanded(
+          //       child: NewsListView(),
+          //     )
+          //   ],
+          // ),
         ),
       ),
     );
