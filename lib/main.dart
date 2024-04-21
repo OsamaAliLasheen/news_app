@@ -1,7 +1,10 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app_ui_setup/screens/home_page.dart';
+import 'package:news_app_ui_setup/services/news_service.dart';
 
 void main() {
+  NewsService(Dio()).getGeneralNews();
   runApp(const NewsApp());
 }
 
