@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:news_app_ui_setup/models/category_model.dart';
 import 'package:news_app_ui_setup/widgets/category_list_view.dart';
-import 'package:news_app_ui_setup/widgets/news_list_view.dart';
+import 'package:news_app_ui_setup/widgets/news_listview_builder.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -71,7 +71,7 @@ class HomePage extends StatelessWidget {
                   height: 18,
                 ),
               ),
-              const NewsListView(),
+              const NewsListViewBuilder(),
             ],
           ),
         ),
