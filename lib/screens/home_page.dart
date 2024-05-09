@@ -13,7 +13,7 @@ class HomePage extends StatelessWidget {
     ),
     CategoryModel(
       imageAssetUrl: 'assets/entertaiment.avif',
-      categoryName: 'Entertainement',
+      categoryName: 'Entertainment',
     ),
     CategoryModel(
       imageAssetUrl: 'assets/general.avif',
